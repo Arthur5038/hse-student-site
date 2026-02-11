@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Обратная связь — Я студент ВШЭ</title>
+  <meta name="description" content="Форма обратной связи учебного сайта: Я — студент ВШЭ." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>Обратная связь</h1>
+      <p class="subtitle">Напиши сообщение — я отвечу, когда буду онлайн.</p>
+
+      <nav aria-label="Основная навигация">
+        <ul class="nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="feedback.html" aria-current="page">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="container">
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Форма сообщения</h2>
+
+      <form class="form" action="#" method="post">
+        <fieldset>
+          <legend>Контактные данные</legend>
+
+          <div class="field">
+            <label for="name">Имя <span aria-hidden="true">*</span></label>
+            <input id="name" name="name" type="text" placeholder="Например, Иван" required />
+            <small>Используется для обращения.</small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span aria-hidden="true">*</span></label>
+            <input id="email" name="email" type="email" placeholder="name@example.com" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input id="phone" name="phone" type="tel" placeholder="+7 (___) ___-__-__" />
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Сообщение</legend>
+
+          <div class="field">
+            <label for="topic">Тема</label>
+            <select id="topic" name="topic">
+              <option value="study">Учеба</option>
+              <option value="project">Проект</option>
+              <option value="collab">Сотрудничество</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Текст сообщения <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" rows="6" required placeholder="Напишите сообщение..."></textarea>
+          </div>
+
+          <div class="field">
+            <p class="label">Как лучше связаться?</p>
+            <label><input type="radio" name="contact" value="email" checked /> Email</label>
+            <label><input type="radio" name="contact" value="phone" /> Телефон</label>
+          </div>
+
+          <div class="field">
+            <label>
+              <input type="checkbox" name="agree" required />
+              Я согласен(на) на обработку данных для обратной связи
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="actions">
+          <button type="submit">Отправить</button>
+          <button type="reset" class="secondary">Очистить</button>
+        </div>
+
+        <p class="hint">
+          Это учебная форма: отправка не сохраняет данные (статическая страница).
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <time datetime="2026">2026</time> Артур. <a href="index.html">На главную</a></p>
+    </div>
+  </footer>
+</body>
+</html>

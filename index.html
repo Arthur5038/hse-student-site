@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Я — студент ВШЭ</title>
+  <meta name="description" content="Персональная мини-страница студента ВШЭ: учеба, интересы, контакты." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>Я — студент ВШЭ</h1>
+      <p class="subtitle">
+        <strong>Моя учеба</strong>, <em>интересы</em> и <span class="accent">планы</span>.
+      </p>
+
+      <nav aria-label="Основная навигация">
+        <ul class="nav">
+          <li><a href="index.html" aria-current="page">Главная</a></li>
+          <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="container">
+    <section aria-labelledby="about-title">
+      <h2 id="about-title">Обо мне</h2>
+
+      <figure class="hero">
+        <img src="img/hse.png" alt="Иллюстрация: учеба в ВШЭ" />
+        <figcaption>Учусь в ВШЭ: люблю математику, кодить и проекты.</figcaption>
+      </figure>
+
+      <article>
+        <p>
+          Меня зовут <b>Артур</b>. Я учусь в <abbr title="Высшая школа экономики">ВШЭ</abbr>.
+          Моя программа связана с <i>прикладной математикой</i> и программированием.
+        </p>
+
+        <p>
+          На занятиях мы разбираем веб-разработку, базы данных, алгоритмы.
+          В свободное время мне интересны <mark>спорт</mark>, музыка и монтаж видео.
+        </p>
+      </article>
+    </section>
+
+    <section aria-labelledby="study-title">
+      <h2 id="study-title">Учеба и навыки</h2>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Что изучаю</h3>
+          <ul>
+            <li>HTML / CSS / основы веба</li>
+            <li>JavaScript и Node.js</li>
+            <li>Базы данных (MongoDB)</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Мои цели</h3>
+          <ol>
+            <li>Сделать аккуратный сайт-портфолио</li>
+            <li>Уверенно работать с формами и API</li>
+            <li>Прокачать проекты для резюме</li>
+          </ol>
+        </article>
+
+        <aside class="card">
+          <h3>Быстрые факты</h3>
+          <p>
+            Люблю писать код в <code>VS Code</code>, а для экспериментов использую
+            <span class="mono">терминал</span>.
+          </p>
+          <p>
+            Полезная ссылка: <a href="https://www.hse.ru/" target="_blank" rel="noopener">сайт ВШЭ</a>.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section aria-labelledby="table-title">
+      <h2 id="table-title">Небольшая таблица (пример структурных тегов)</h2>
+
+      <table>
+        <caption>Пример недельного расписания (условно)</caption>
+        <thead>
+          <tr>
+            <th scope="col">День</th>
+            <th scope="col">Предмет</th>
+            <th scope="col">Формат</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Пн</td>
+            <td>Веб-программирование</td>
+            <td>Практика</td>
+          </tr>
+          <tr>
+            <td>Ср</td>
+            <td>Математика</td>
+            <td>Лекция</td>
+          </tr>
+          <tr>
+            <td>Пт</td>
+            <td>Проект</td>
+            <td>Семинар</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="cta-title" class="cta">
+      <h2 id="cta-title">Связаться со мной</h2>
+      <p>
+        Хочешь оставить сообщение? Перейди на страницу
+        <a href="feedback.html">обратной связи</a>.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <time datetime="2026">2026</time> Артур. Учебный проект «Я — студент ВШЭ».</p>
+    </div>
+  </footer>
+</body>
+</html>

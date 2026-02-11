@@ -1,0 +1,44 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; }
+.container { width: min(980px, 92%); margin: 0 auto; }
+
+.skip-link { position: absolute; left: -9999px; top: 0; }
+.skip-link:focus { left: 12px; top: 12px; background: #fff; padding: 8px 10px; border: 1px solid #000; }
+
+.site-header { padding: 24px 0; border-bottom: 1px solid #e6e6e6; background: #fafafa; }
+.subtitle { margin: 8px 0 0; color: #444; }
+.accent { text-decoration: underline; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+
+.nav { list-style: none; padding: 0; margin: 16px 0 0; display: flex; gap: 12px; }
+.nav a { text-decoration: none; padding: 6px 10px; border-radius: 8px; color: #111; border: 1px solid #ddd; background: #fff; }
+.nav a[aria-current="page"] { border-color: #111; }
+
+.hero { margin: 16px 0; }
+.hero img { width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; border: 1px solid #eee; }
+.hero figcaption { color: #555; margin-top: 6px; font-size: 0.95rem; }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.card { border: 1px solid #eee; border-radius: 12px; padding: 14px; background: #fff; }
+
+table { width: 100%; border-collapse: collapse; margin: 10px 0 24px; }
+caption { text-align: left; margin-bottom: 6px; color: #555; }
+th, td { border: 1px solid #e6e6e6; padding: 8px; text-align: left; }
+
+.cta { border-top: 1px dashed #ddd; padding-top: 16px; margin-top: 24px; }
+
+.site-footer { border-top: 1px solid #e6e6e6; padding: 16px 0; background: #fafafa; }
+
+.form { max-width: 720px; }
+fieldset { border: 1px solid #eee; border-radius: 12px; padding: 12px; margin: 0 0 14px; }
+legend { padding: 0 6px; }
+.field { margin: 10px 0; display: grid; gap: 6px; }
+label { font-weight: 600; }
+input, select, textarea { padding: 10px; border: 1px solid #ddd; border-radius: 10px; font: inherit; }
+small { color: #666; }
+
+.actions { display: flex; gap: 10px; margin-top: 12px; }
+button { padding: 10px 14px; border: 1px solid #111; border-radius: 10px; background: #111; color: #fff; cursor: pointer; }
+button.secondary { background: #fff; color: #111; border-color: #ddd; }
+
+.hint { color: #666; font-size: 0.95rem; }
