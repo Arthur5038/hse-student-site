@@ -5,7 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Я — студент ВШЭ</title>
   <meta name="description" content="Персональная мини-страница студента ВШЭ: учеба, интересы, контакты." />
+  <!-- Пункт 1 ТЗ: внешний CSS-файл подключен -->
   <link rel="stylesheet" href="css/style.css" />
+  <!-- Пункт 2 ТЗ: локальные стили на странице -->
+  <style>
+    h1 {
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    #table-title::after {
+      content: " (структурный пример)";
+      font-size: 0.8em;
+      color: #5a6478;
+    }
+
+    .site-footer time {
+      font-weight: 700;
+    }
+  </style>
 </head>
 
 <body>
@@ -13,10 +31,11 @@
 
   <header class="site-header">
     <div class="container">
-      <h1>Я — студент ВШЭ</h1>
-      <p class="subtitle">
+      <h1 style="letter-spacing: 0.04em;">Я — студент ВШЭ</h1>
+      <p class="subtitle" style="font-size: 1.05rem;">
         <strong>Моя учеба</strong>, <em>интересы</em> и <span class="accent">планы</span>.
       </p>
+      <span class="header-badge" aria-label="Статус проекта">HSE • 2026</span>
 
       <nav aria-label="Основная навигация">
         <ul class="nav">
@@ -33,7 +52,7 @@
 
       <figure class="hero">
         <img src="img/hse.png" alt="Иллюстрация: учеба в ВШЭ" />
-        <figcaption>Учусь в ВШЭ: люблю математику, кодить и проекты.</figcaption>
+        <figcaption style="text-align: center;">Учусь в ВШЭ: люблю математику, кодить и проекты.</figcaption>
       </figure>
 
       <article>
@@ -130,5 +149,6 @@
       <p>© <time datetime="2026">2026</time> Артур. Учебный проект «Я — студент ВШЭ».</p>
     </div>
   </footer>
+  <a class="to-top" href="#content" aria-label="К началу содержимого">Наверх</a>
 </body>
 </html>

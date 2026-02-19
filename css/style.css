@@ -1,44 +1,401 @@
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; }
-.container { width: min(980px, 92%); margin: 0 auto; }
+:root {
+  --bg-start: #f8f9ff;
+  --bg-end: #ecf2ff;
+  --surface: #ffffff;
+  --surface-soft: #f5f7ff;
+  --text: #1f2740;
+  --muted: #5b6380;
+  --border: #d9dff0;
+  --brand: #2250a8;
+  --brand-strong: #173773;
+}
 
-.skip-link { position: absolute; left: -9999px; top: 0; }
-.skip-link:focus { left: 12px; top: 12px; background: #fff; padding: 8px 10px; border: 1px solid #000; }
+* {
+  box-sizing: border-box;
+}
 
-.site-header { padding: 24px 0; border-bottom: 1px solid #e6e6e6; background: #fafafa; }
-.subtitle { margin: 8px 0 0; color: #444; }
-.accent { text-decoration: underline; }
-.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--text);
+  background-color: var(--bg-start);
+  background-image: linear-gradient(180deg, var(--bg-start) 0%, var(--bg-end) 100%);
+}
 
-.nav { list-style: none; padding: 0; margin: 16px 0 0; display: flex; gap: 12px; }
-.nav a { text-decoration: none; padding: 6px 10px; border-radius: 8px; color: #111; border: 1px solid #ddd; background: #fff; }
-.nav a[aria-current="page"] { border-color: #111; }
+.container {
+  width: min(1040px, 92%);
+  max-width: 1040px;
+  margin: 0 auto;
+}
 
-.hero { margin: 16px 0; }
-.hero img { width: 100%; max-height: 340px; object-fit: cover; border-radius: 12px; border: 1px solid #eee; }
-.hero figcaption { color: #555; margin-top: 6px; font-size: 0.95rem; }
+#content {
+  padding: 18px 0 22px;
+}
 
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
-.card { border: 1px solid #eee; border-radius: 12px; padding: 14px; background: #fff; }
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+}
 
-table { width: 100%; border-collapse: collapse; margin: 10px 0 24px; }
-caption { text-align: left; margin-bottom: 6px; color: #555; }
-th, td { border: 1px solid #e6e6e6; padding: 8px; text-align: left; }
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  z-index: 1000 !important;
+  background: #fff;
+  padding: 8px 10px;
+  border: 1px solid #000;
+}
 
-.cta { border-top: 1px dashed #ddd; padding-top: 16px; margin-top: 24px; }
+.site-header {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(90deg, #f8faff, #f1f5ff);
+}
 
-.site-footer { border-top: 1px solid #e6e6e6; padding: 16px 0; background: #fafafa; }
+.site-header .container {
+  position: relative;
+}
 
-.form { max-width: 720px; }
-fieldset { border: 1px solid #eee; border-radius: 12px; padding: 12px; margin: 0 0 14px; }
-legend { padding: 0 6px; }
-.field { margin: 10px 0; display: grid; gap: 6px; }
-label { font-weight: 600; }
-input, select, textarea { padding: 10px; border: 1px solid #ddd; border-radius: 10px; font: inherit; }
-small { color: #666; }
+.header-badge {
+  position: absolute;
+  top: 2px;
+  right: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: var(--brand);
+}
 
-.actions { display: flex; gap: 10px; margin-top: 12px; }
-button { padding: 10px 14px; border: 1px solid #111; border-radius: 10px; background: #111; color: #fff; cursor: pointer; }
-button.secondary { background: #fff; color: #111; border-color: #ddd; }
+h2 {
+  font-size: 1.45rem;
+  color: var(--brand-strong);
+  margin: 0 0 10px;
+}
 
-.hint { color: #666; font-size: 0.95rem; }
+main section > h2::before {
+  content: "§ ";
+  color: #5577c6;
+}
+
+main section > h2::after {
+  content: "";
+  display: block;
+  width: 72px;
+  margin-top: 4px;
+  border-bottom: 2px solid #b8c7eb;
+}
+
+p {
+  text-align: left;
+}
+
+main article p:first-of-type::first-letter {
+  font-size: 1.45em;
+  font-weight: 700;
+  color: var(--brand);
+}
+
+.subtitle {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.accent {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+a {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #583f9a;
+}
+
+a:hover {
+  color: #0f3a86;
+}
+
+/* Пункт 7 уже был реализован: навигация на Flexbox. */
+.nav {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav a {
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 10px;
+  color: var(--text);
+  border: 1px solid var(--border);
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+.nav a:hover {
+  border-color: #9fb4ea;
+  transform: translateY(-1px);
+}
+
+.nav a[aria-current="page"] {
+  border-color: var(--brand) !important;
+  font-weight: 700 !important;
+}
+
+.hero {
+  margin: 16px 0;
+}
+
+.hero img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.hero figcaption {
+  color: var(--muted);
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  position: relative;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  background: var(--surface);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  background-color: #afc2f2;
+}
+
+.card ul {
+  list-style: none;
+  margin: 8px 0 0;
+  padding-left: 0;
+}
+
+.card ul li {
+  margin: 0 0 4px;
+  padding-left: 18px;
+  position: relative;
+}
+
+.card ul li::before {
+  content: "◆";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.78rem;
+  color: #4967b0;
+}
+
+ol {
+  list-style: decimal-leading-zero;
+  padding-left: 22px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 24px;
+}
+
+caption {
+  text-align: left;
+  margin-bottom: 6px;
+  color: var(--muted);
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 8px;
+  text-align: left;
+}
+
+.cta {
+  border-top: 1px dashed #b8c7eb;
+  padding-top: 16px;
+  margin-top: 24px;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 16px 0;
+  background: var(--surface-soft);
+}
+
+#feedback-form {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto 12px;
+}
+
+.form {
+  max-width: 720px;
+}
+
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px;
+  margin: 0 0 14px;
+  background: var(--surface);
+}
+
+legend {
+  padding: 0 6px;
+}
+
+.field {
+  margin: 10px 0;
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid #c9d2ea;
+  border-radius: 10px;
+  font: inherit;
+}
+
+input[type="email"] {
+  border-color: #7f97cf;
+  background-color: #f5f8ff;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #9ab2e8;
+  border-color: #6f89c5;
+}
+
+small {
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+button {
+  padding: 10px 14px;
+  border: 1px solid var(--brand-strong);
+  border-radius: 10px;
+  background: var(--brand-strong);
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #2152ac;
+}
+
+button.secondary {
+  background: #fff;
+  color: var(--brand-strong);
+  border-color: #afbfdf;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.to-top {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 800;
+  padding: 8px 11px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--brand);
+  box-shadow: 0 6px 20px rgba(27, 42, 78, 0.22);
+}
+
+.to-top:hover {
+  background-color: #1a438f;
+}
+
+/* Пункт 9 ТЗ: адаптация под мобильные экраны */
+@media (max-width: 700px) {
+  body {
+    font-size: 15px;
+  }
+
+  .header-badge {
+    position: static;
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .to-top {
+    right: 10px;
+    bottom: 10px;
+  }
+}
