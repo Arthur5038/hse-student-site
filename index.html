@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Я — студент ВШЭ</title>
   <meta name="description" content="Персональная мини-страница студента ВШЭ: учеба, интересы, контакты." />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""
+  />
   <!-- Пункт 1 ТЗ: внешний CSS-файл подключен -->
   <link rel="stylesheet" href="css/style.css" />
   <!-- Пункт 2 ТЗ: локальные стили на странице -->
@@ -142,6 +148,38 @@
         <a href="feedback.html">обратной связи</a>.
       </p>
     </section>
+
+    <section aria-labelledby="map-title" class="map-section">
+      <h2 id="map-title">Где я учусь</h2>
+      <p>Ниже отмечен город, где я учусь и развиваюсь в веб-разработке.</p>
+      <div id="map" aria-label="Карта с отметкой местоположения"></div>
+    </section>
+
+    <section aria-labelledby="chat-title" class="chat-section">
+      <h2 id="chat-title">Виртуальный чат с автором</h2>
+      <p>Чат работает полностью на клиенте: сообщения и голос не отправляются на сервер.</p>
+
+      <div class="chat-box" aria-live="polite" aria-label="История сообщений">
+        <div id="chat-messages">
+          <div class="chat-message author-message">
+            Привет! Спроси про учёбу, проекты или планы.
+          </div>
+        </div>
+      </div>
+
+      <form id="chat-form" class="chat-controls" action="#" method="post">
+        <label for="chat-input">Сообщение</label>
+        <textarea id="chat-input" rows="3" placeholder="Напишите сообщение..."></textarea>
+
+        <div class="chat-buttons">
+          <button type="submit" id="chat-send">Отправить</button>
+          <button type="button" id="voice-start">Запись</button>
+          <button type="button" id="voice-stop" disabled>Стоп</button>
+        </div>
+
+        <p id="voice-status" class="voice-status">Голосовая запись не запущена.</p>
+      </form>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -150,5 +188,12 @@
     </div>
   </footer>
   <a class="to-top" href="#content" aria-label="К началу содержимого">Наверх</a>
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""
+    defer
+  ></script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>

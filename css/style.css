@@ -367,6 +367,95 @@ button.secondary {
   background-color: #1a438f;
 }
 
+.map-section,
+.chat-section {
+  margin-top: 26px;
+}
+
+#map {
+  width: 100%;
+  height: 340px;
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.chat-box {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: #f9fbff;
+  padding: 12px;
+}
+
+#chat-messages {
+  height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-message {
+  max-width: min(78%, 560px);
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #cfd8f0;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+.author-message {
+  align-self: flex-start;
+  background: #f1f5ff;
+}
+
+.user-message {
+  align-self: flex-end;
+  background: #dfe9ff;
+}
+
+.chat-message audio {
+  width: 100%;
+  min-width: 220px;
+}
+
+.chat-controls {
+  margin-top: 12px;
+  display: grid;
+  gap: 8px;
+}
+
+.chat-controls label {
+  font-weight: 600;
+}
+
+#chat-input {
+  width: 100%;
+  resize: vertical;
+}
+
+.chat-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+#voice-stop:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.voice-status {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+}
+
+.voice-status-error {
+  color: #9b1f1f;
+}
+
 /* Пункт 9 ТЗ: адаптация под мобильные экраны */
 @media (max-width: 700px) {
   body {
@@ -397,5 +486,21 @@ button.secondary {
   .to-top {
     right: 10px;
     bottom: 10px;
+  }
+
+  #map {
+    height: 280px;
+  }
+
+  #chat-messages {
+    height: 240px;
+  }
+
+  .chat-message {
+    max-width: 90%;
+  }
+
+  .chat-buttons button {
+    width: 100%;
   }
 }
