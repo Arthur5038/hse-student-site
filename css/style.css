@@ -456,6 +456,52 @@ button.secondary {
   color: #9b1f1f;
 }
 
+.submissions-list {
+  display: grid;
+  gap: 14px;
+}
+
+.submission-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  background: var(--surface);
+}
+
+.submission-title {
+  margin: 0 0 8px;
+  color: var(--brand-strong);
+}
+
+.submission-meta,
+.submission-message,
+.submissions-empty,
+.submissions-error {
+  margin: 0;
+}
+
+.submission-meta {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.submission-message {
+  margin-top: 10px;
+  white-space: pre-wrap;
+}
+
+.submissions-empty,
+.submissions-error {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f9fbff;
+  border: 1px solid var(--border);
+}
+
+.submissions-error {
+  color: #9b1f1f;
+}
+
 /* Пункт 9 ТЗ: адаптация под мобильные экраны */
 @media (max-width: 700px) {
   body {
@@ -502,5 +548,9 @@ button.secondary {
 
   .chat-buttons button {
     width: 100%;
+  }
+
+  .submission-meta {
+    line-height: 1.7;
   }
 }

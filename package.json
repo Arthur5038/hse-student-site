@@ -1,0 +1,13 @@
+{
+  "name": "hse-student-site",
+  "version": "1.0.0",
+  "description": "Local node.js version of the HSE student personal website with MongoDB storage.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  }
+}

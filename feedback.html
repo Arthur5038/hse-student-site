@@ -38,6 +38,7 @@
         <ul class="nav">
           <li><a href="index.html">Главная</a></li>
           <li><a href="feedback.html" aria-current="page">Обратная связь</a></li>
+          <li><a href="submissions.html">Сообщения</a></li>
         </ul>
       </nav>
     </div>
@@ -47,7 +48,7 @@
     <section aria-labelledby="form-title">
       <h2 id="form-title" style="margin-bottom: 0.45rem;">Форма сообщения</h2>
 
-      <form id="feedback-form" class="form" action="#" method="post">
+      <form id="feedback-form" class="form" action="/api/feedback" method="post">
         <fieldset>
           <legend>Контактные данные</legend>
 
@@ -94,7 +95,7 @@
 
           <div class="field">
             <label>
-              <input type="checkbox" name="agree" required />
+              <input type="checkbox" name="agree" value="yes" required />
               Я согласен(на) на обработку данных для обратной связи
             </label>
           </div>
@@ -106,7 +107,7 @@
         </div>
 
         <p class="hint">
-          Это учебная форма: отправка не сохраняет данные (статическая страница).
+          После отправки данные сохраняются в локальную MongoDB и открывается страница со всеми сообщениями.
         </p>
       </form>
     </section>

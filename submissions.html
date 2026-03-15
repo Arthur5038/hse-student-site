@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Сообщения — Я студент ВШЭ</title>
+  <meta name="description" content="Список сообщений, сохраненных через форму обратной связи." />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .status-banner {
+      margin-bottom: 16px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background-color: #edf5ff;
+      border: 1px solid #bfd3f5;
+    }
+
+    .submission-meta strong {
+      color: #173773;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Перейти к содержимому</a>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>Полученные сообщения</h1>
+      <p class="subtitle">Здесь отображаются данные, сохранённые в локальной MongoDB.</p>
+      <span class="header-badge" aria-label="Статус проекта">Node.js + MongoDB</span>
+
+      <nav aria-label="Основная навигация">
+        <ul class="nav">
+          <li><a href="index.html">Главная</a></li>
+          <li><a href="feedback.html">Обратная связь</a></li>
+          <li><a href="submissions.html" aria-current="page">Сообщения</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content" class="container">
+    <section aria-labelledby="submissions-title">
+      <h2 id="submissions-title">Список заявок</h2>
+      <div id="save-status"></div>
+      <div id="submissions-list" class="submissions-list" aria-live="polite">
+        <p class="submissions-empty">Загрузка данных...</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <time datetime="2026">2026</time> Артур. <a href="feedback.html">Вернуться к форме</a></p>
+    </div>
+  </footer>
+  <a class="to-top" href="#content" aria-label="К началу содержимого">Наверх</a>
+  <script src="js/submissions.js" defer></script>
+</body>
+</html>
